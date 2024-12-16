@@ -20,10 +20,8 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,14 +34,12 @@ class FirstFragment : Fragment() {
                 (activity as MainActivity).setOrderData(orderData)
             })
 
-
         view.findViewById<ImageView>(R.id.ice_cream)
             .setOnClickListener(View.OnClickListener {
                 displayToast(getString(R.string.ice_cream_order_message))
                 orderData = "Ice Cream"
                 (activity as MainActivity).setOrderData(orderData)
             })
-
 
         view.findViewById<ImageView>(R.id.froyo)
             .setOnClickListener(View.OnClickListener {

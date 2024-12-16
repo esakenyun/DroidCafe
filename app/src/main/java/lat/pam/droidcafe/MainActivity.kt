@@ -2,7 +2,6 @@ package lat.pam.droidcafe
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -10,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import lat.pam.droidcafe.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -31,10 +31,14 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            val intent = Intent(this, OrderActivity::class.java)
-            intent.putExtra("ORDER_DATA", orderData)
-            startActivity(intent)
+        binding.fab.setOnClickListener {
+            if (orderData.isEmpty()) {
+                Toast.makeText(this, "Order data is empty. Please select an order first.", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(this, OrderActivity::class.java)
+                intent.putExtra("ORDER_DATA", orderData)
+                startActivity(intent)
+            }
         }
     }
 
