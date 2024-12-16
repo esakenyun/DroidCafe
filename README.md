@@ -13,4 +13,4 @@ Berikut adalah tampilan dari aplikasi Droid Cafe:
 
 Berikut adalah video demo dari aplikasi Droid Cafe:
 
-[![Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
+https://github.com/user-attachments/assets/9f6b260c-d7e2-44aa-8033-fa2b74ed835c
